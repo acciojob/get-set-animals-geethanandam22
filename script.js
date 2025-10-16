@@ -4,37 +4,30 @@ class Animal {
     this._species = species;
   }
 
-  // Getter for species
   get species() {
     return this._species;
   }
 
-  // Method to make a sound
   makeSound() {
     console.log(`The ${this._species} makes a sound`);
   }
 }
 
-// Cat class extending Animal
+// Cat subclass
 class Cat extends Animal {
   purr() {
     console.log("purr");
   }
 }
 
-// Dog class extending Animal
+// Dog subclass
 class Dog extends Animal {
   bark() {
     console.log("woof");
   }
 }
 
-// Example test code (you can comment out these lines if not needed)
-const myCat = new Cat("Siamese");
-myCat.makeSound(); // The Siamese makes a sound
-myCat.purr();      // purr
-
-const myDog = new Dog("Golden Retriever");
-myDog.makeSound(); // The Golden Retriever makes a sound
-myDog.bark();      // woof
-
+// ✅ Make classes accessible to Cypress (attach to window)
+window.Animal = Animal;
+window.Cat = Cat;
+window.Dog = Dog;
