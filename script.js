@@ -1,4 +1,4 @@
-// Parent class: Animal
+// Base Animal class
 class Animal {
   constructor(species) {
     this._species = species;
@@ -9,34 +9,32 @@ class Animal {
     return this._species;
   }
 
-  // Method to make sound
+  // Method to make a sound
   makeSound() {
     console.log(`The ${this._species} makes a sound`);
   }
 }
 
-// Child class: Cat
+// Cat class extending Animal
 class Cat extends Animal {
-  // Cat-specific method
   purr() {
     console.log("purr");
   }
 }
 
-// Child class: Dog
+// Dog class extending Animal
 class Dog extends Animal {
-  // Dog-specific method
   bark() {
     console.log("woof");
   }
 }
 
-// Example usage:
+// Example test code (you can comment out these lines if not needed)
 const myCat = new Cat("Siamese");
-myCat.makeSound(); // Output: The Siamese makes a sound
-myCat.purr();      // Output: purr
+myCat.makeSound(); // The Siamese makes a sound
+myCat.purr();      // purr
 
 const myDog = new Dog("Golden Retriever");
-myDog.makeSound(); // Output: The Golden Retriever makes a sound
-myDog.bark();      // Output: woof
+myDog.makeSound(); // The Golden Retriever makes a sound
+myDog.bark();      // woof
 
